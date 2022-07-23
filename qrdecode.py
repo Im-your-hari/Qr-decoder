@@ -1,6 +1,6 @@
 import os
 from pyzbar.pyzbar import decode
-from PIL import Image
+from PIL import Image as Im
 from breezypythongui import EasyFrame
 from tkinter import *
 from tkinter import filedialog
@@ -58,7 +58,14 @@ class Main(EasyFrame):
 					)
 				)
 			print(fln)
-			self.wifi["text"]=fln			
+			self.wifi["text"]=fln
+			img = Im.open(r"{0}".format(fln))
+			l = decode(img)
+			l=str(l[0][0])
+			for i in l.split(";"):
+				j = i.split(":")
+				print(j[len(j)-1])
+				self.wifi["text"]=j[len(j)-1]
 
 
 
