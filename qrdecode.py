@@ -5,17 +5,6 @@ from breezypythongui import EasyFrame
 from tkinter import *
 from tkinter import filedialog
 
-#logic___________
-'''
-img = Image.open(r"qreee.jpg")
-l = decode(img)
-l=str(l[0][0])
-#print(l)
-
-for i in l.split(";"):
-	j = i.split(":")
-	print(j[len(j)-1])
-'''
 
 #gui____________
 class Main(EasyFrame):
